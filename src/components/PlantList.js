@@ -1,9 +1,16 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList() {
+
+//in order to display the plants
+//map through the plants obj and pass the plants to PlantCard component
+//INCLUDE UNIQUE ID'S
+function PlantList({plants}) {
   return (
-    <ul className="cards">{/* render PlantCards components in here */}</ul>
+    <ul className="cards">
+      {plants.map(plant => 
+    <PlantCard key={plant.id} plant={plant} />)}
+    </ul>
   );
 }
 
